@@ -30,13 +30,7 @@ public abstract class Account implements IBaseRate {
 	 rate = setBaseRate();
 	 
 	}
-  /**
-	@Override
-	public double setBaseRate() {
-		// TODO Auto-generated method stub
-		return IBaseRate.super.setBaseRate();
-	}
-	**/
+  
 	 String setAccountNumber() {
 		
 		String lastTwoDigOfSSN = ssN.substring(ssN.length()-2, ssN.length());
@@ -48,6 +42,33 @@ public abstract class Account implements IBaseRate {
 		return lastTwoDigOfSSN + uniqueID + ranDNum;
 	}
 	
+	 //list common methods-transactions
+	 
+	 public void compound() {
+		double accruedInterest = balance*(rate/100); //time period was ignored
+		System.out.println("Accrued Interest: $"+accruedInterest);
+		balance +=accruedInterest;
+		printBalance();
+	}
+	 
+	 public void deposit(double amount) {
+		balance = balance + amount;
+	}
+	 
+	 public void withdraw(double amount) {
+		balance = balance - amount;
+	}
+	 
+	 public void transfer(String toWhere, double amount) {
+		balance = balance - amount;
+		System.out.println("Tranfering $"+amount+" to: "+toWhere);
+		printBalance();
+	}
+	 
+	 public void printBalance() {
+		System.out.println("Your current balance is: $"+balance);
+	}
+	 
 	 public void showInfo() {
 		System.out.println("Name: "+customerName+" \nAccNo: "+accNo+" \nBalance: "+balance);
 	}

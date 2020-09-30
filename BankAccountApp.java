@@ -9,6 +9,10 @@ public class BankAccountApp {
 		Checking checkAcc1 = new Checking("Leo", "123456789", 4000);
 		
 		savAcc1.showInfo();
+		savAcc1.compound();
+		//savAcc1.deposit(3000);
+		//savAcc1.withdraw(500);
+		//savAcc1.transfer("Mum", 1000);
 		System.out.println("*************");
 		checkAcc1.showInfo();
 		
