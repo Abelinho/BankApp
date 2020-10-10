@@ -11,8 +11,8 @@ public class Checking extends Account implements IBaseRate {
 	 * 
 	 * */
 	
-	int debitCardNumber;
-	int debitCardPIN;
+	private int debitCardNumber;
+	private int debitCardPIN;
 	
 	public Checking(String customerName,String ssN, double initDeposit ) {
 	super(customerName, ssN, initDeposit);

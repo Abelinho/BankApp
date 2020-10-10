@@ -10,11 +10,11 @@ public class Savings extends Account implements IBaseRate {
 	 * list any methods specific to Savings accts																																	
 	 * 
 	 * */
-	int safetyDepositBoxID; 
-	int safetyDepositBoxKey; 
+	private int safetyDepositBoxID; 
+	private int safetyDepositBoxKey; 
 	
 	
-	public Savings(String customerName,String ssN, double initDeposit, int safetyDepositBoxID, int safetyDepositBoxKey) {
+	public Savings(String customerName,String ssN, double initDeposit) {
 		super(customerName, ssN, initDeposit);
 		accNo = "1"+ accNo;
 		rate = rate - 0.25;
