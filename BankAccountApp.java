@@ -38,7 +38,7 @@ public class BankAccountApp {
 		
 		// read a CSV file then create new accounts based on that data
 		
-		 List<String[]> newAccountHolders = utilities.CSV.read(file);
+		 List<String[]> newAccountHolders = bankaccountapp.utilities.CSV.read(file);
 		
 		 //iterate through the List of string arrays using the foreach loop and assign elements of each array to variables
 		 //you will use one of these variables to create accts based on type of acct
