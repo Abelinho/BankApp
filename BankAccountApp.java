@@ -40,6 +40,8 @@ public class BankAccountApp {
 		
 		 List<String[]> newAccountHolders = utilities.CSV.read(file);
 		
+		 //iterate through the List of string arrays using the foreach loop and assign elements of each array to variables
+		 //you will use one of these variables to create accts based on type of acct
 		 for(String[] accountHolder : newAccountHolders) {
 			 
 			 
@@ -48,19 +50,20 @@ public class BankAccountApp {
 			 String accountType = accountHolder[2];
 			 double initDeposit = Double.parseDouble(accountHolder[3]);
 			 
-			 //System.out.println(name + " "+ssN + " "+accountType +" "+ initDeposit);
+			 //if account type is savings/checking, create a savings/checking acct respectively
 			 if(accountType.equalsIgnoreCase("savings")) {
 				 //System.out.println("Open a Savings Account");
-				 accounts.add(new Savings(name, ssN, initDeposit));
+				 accounts.add(new Savings(name, ssN, initDeposit)); //create savings acct and add/save it to the List(of accounts)
 			 }else if (accountType.equalsIgnoreCase("checking")) {
 					 //System.out.println("Open a Checking Account");
-					 accounts.add(new Checking(name, ssN, initDeposit));
+					 accounts.add(new Checking(name, ssN, initDeposit));//create checking acct and add/save it to the List(of accounts)
 			}else {
 				System.out.println("Error Could not read Account Type");
 			}
 			 
 		 }
 		 
+		 //iterate thru the List of accounts and call the show info() method on each acct
 		 for (Account acct : accounts) {
 			 System.out.println("\n******************");
 			acct.showInfo();
